@@ -862,3 +862,54 @@ section {
         position: relative;
     }
 }
+
+/* Change the mobile menu to column only when hamburger is clicked */
+.navbar {
+    display: flex;
+    flex-direction: row; /* Change from column to row */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  .nav-menu {
+    display: flex;
+    flex-direction: row; /* Change from column to row */
+    gap: 2rem;
+  }
+  
+  /* Update your media query */
+  @media screen and (max-width: 768px) {
+    .nav-menu {
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: -100%;
+      width: 100%;
+      transition: all 0.5s ease;
+    }
+    
+    .nav-menu.active {
+      left: 0;
+      background-color: #333;
+      padding: 1rem 0;
+    }
+    
+    .hamburger {
+      display: block;
+    }
+  }
+
+  /* Add this to prevent horizontal overflow */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  /* Make sure containers don't exceed viewport width */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
