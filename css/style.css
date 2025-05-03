@@ -13,6 +13,48 @@
     --transition: all 0.3s ease;
 }
 
+[data-theme="dark"] {
+    --primary-color: #3b82f6;
+    --secondary-color: #e2e8f0;
+    --accent-color: #60a5fa;
+    --text-color: #e2e8f0;
+    --light-text: #94a3b8;
+    --bg-color: #0f172a;
+    --light-bg: #1e293b;
+    --dark-bg: #020617;
+}
+
+/* Ensure the dark theme applies to all elements */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Update specific components that might need dark theme adjustments */
+.navbar {
+    background-color: var(--bg-color);
+}
+
+.footer {
+    background-color: var(--dark-bg);
+}
+
+.project-card,
+.timeline-content,
+.contact-form {
+    background-color: var(--light-bg);
+}
+
+/* Add smooth transitions for theme changes */
+.navbar,
+.project-card,
+.timeline-content,
+.contact-form {
+    transition: background-color 0.3s ease;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -525,7 +567,7 @@ section {
     margin-bottom: 30px;
 }
 
-.contact-item.email_info{
+.contact-item.email_info {
     position: relative;
     left: 43px;
 }
@@ -542,7 +584,8 @@ section {
     color: var(--secondary-color);
 }
 
-.contact-item a, .contact-item p {
+.contact-item a,
+.contact-item p {
     color: var(--text-color);
     text-decoration: none;
     transition: var(--transition);
@@ -674,34 +717,34 @@ section {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .hero-cta {
         justify-content: center;
     }
-    
+
     .about-content {
         flex-direction: column;
     }
-    
+
     .contact-content {
         flex-direction: column;
     }
-    
+
     .timeline::before {
         left: 30px;
     }
-    
+
     .timeline-item {
         width: 100%;
         padding-left: 70px;
         padding-right: 0;
         text-align: left;
     }
-    
+
     .timeline-item:nth-child(even) {
         left: 0;
     }
-    
+
     .timeline-item::after {
         left: 20px;
     }
@@ -721,39 +764,39 @@ section {
         gap: 30px;
         transition: var(--transition);
     }
-    
+
     .nav-links.active {
         left: 0;
     }
-    
+
     .hamburger {
         display: block;
     }
-    
+
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
-    
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.2rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -764,23 +807,23 @@ section {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .btn {
         width: 100%;
         text-align: center;
     }
-    
+
     .project-links {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-    
+
     .footer-links {
         flex-direction: column;
         gap: 10px;
@@ -804,28 +847,28 @@ section {
         overflow-y: auto;
         z-index: 999;
     }
-    
+
     .nav-links.active {
         left: 0;
     }
-    
+
     .hamburger {
         display: block;
         z-index: 1000;
     }
-    
+
     .hamburger span {
         transition: all 0.3s ease;
     }
-    
+
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
-    
+
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
@@ -845,7 +888,8 @@ section {
 }
 
 .hamburger {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     cursor: pointer;
     background: transparent;
     border: none;
@@ -857,7 +901,7 @@ section {
     .hamburger {
         display: block;
     }
-    
+
     .navbar .container {
         position: relative;
     }
@@ -866,26 +910,28 @@ section {
 /* Change the mobile menu to column only when hamburger is clicked */
 .navbar {
     display: flex;
-    flex-direction: row; /* Change from column to row */
+    flex-direction: row;
+    /* Change from column to row */
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-  }
-  
-  .nav-menu {
-    display: flex;
-    flex-direction: row; /* Change from column to row */
-    gap: 2rem;
-  }
-  
-  /* Update your media query */
-  @media screen and (max-width: 768px) {
+}
 
-    .navbar{
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    /* Change from column to row */
+    gap: 2rem;
+}
+
+/* Update your media query */
+@media screen and (max-width: 768px) {
+
+    .navbar {
         min-height: 60px;
     }
 
-    #home{
+    #home {
         margin-top: 60px;
     }
 
@@ -893,36 +939,180 @@ section {
         flex-direction: column;
         position: absolute;
         top: 70px;
-        left: -100%; /* Starts off-screen */
+        left: -100%;
+        /* Starts off-screen */
         width: 100%;
         background-color: #333;
         padding: 1rem 0;
         transition: all 0.5s ease;
         opacity: 0;
     }
-    
-    .nav-menu.active {
-      left: 0;
-      background-color: #333;
-      padding: 1rem 0;
-      opacity: 1;
-    }
-    
-    .hamburger {
-      display: block;
-    }
-  }
 
-  /* Add this to prevent horizontal overflow */
-html, body {
+    .nav-menu.active {
+        left: 0;
+        background-color: #333;
+        padding: 1rem 0;
+        opacity: 1;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Add this to prevent horizontal overflow */
+html,
+body {
     overflow-x: hidden;
     max-width: 100%;
-  }
-  
-  /* Make sure containers don't exceed viewport width */
-  .container {
+}
+
+/* Make sure containers don't exceed viewport width */
+.container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
-  }
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle i {
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle .fa-sun {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+[data-theme="dark"] .theme-toggle .fa-moon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle .fa-sun {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* For mobile view */
+@media (max-width: 768px) {
+    .theme-toggle {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links.active {
+        /* Your existing mobile menu styles */
+        display: flex;
+        flex-direction: column;
+        /* Add these to ensure theme toggle is visible */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .theme-toggle {
+        margin-top: 20px;
+        order: 1;
+        /* Ensures it appears after other links */
+    }
+}
+
+/* Navbar styles for dark theme */
+[data-theme="dark"] .navbar {
+    background-color: var(--dark-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+    background-color: rgba(15, 23, 42, 0.95);
+    /* semi-transparent dark background */
+    backdrop-filter: blur(10px);
+}
+
+/* Ensure logo and links maintain proper contrast in dark mode */
+[data-theme="dark"] .logo {
+    color: white;
+}
+
+[data-theme="dark"] .nav-links a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .nav-links a:hover {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .hamburger span {
+    background-color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px 0;
+    transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .footer {
+    background-color: var(--dark-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    color: white;
+}
+
+[data-theme="dark"] .footer p {
+    color: var(--light-text);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+[data-theme="dark"] .footer-links a {
+    color: var(--light-text);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .footer-links a:hover {
+    color: var(--accent-color);
+}
