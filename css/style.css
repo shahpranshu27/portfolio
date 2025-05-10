@@ -718,7 +718,7 @@ footer {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: .4rem;
+        font-size: 2rem;
     }
 
     .hero-cta {
